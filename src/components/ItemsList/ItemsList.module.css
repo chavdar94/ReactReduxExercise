@@ -1,0 +1,26 @@
+.item {
+    font-size: 36px;
+    display: flex;
+    gap: 24px;
+    margin-bottom: 12px;
+}
+
+.btn-container {
+    margin: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 6px 32px;
+    font-size: 24px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(50, 103, 103);
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: rgb(23, 56, 56);
+}

@@ -1,0 +1,18 @@
+.cart {
+    margin: 120px;
+    font-size: 48px;
+    cursor: pointer;
+}
+
+.cart-list {
+    display: flex;
+    gap: 18px;
+}
+
+.cart-item {
+    font-weight: bold;
+    font-size: 24px;
+    border: 2px solid black;
+    padding: 4px 14px;
+    border-radius: 20px;
+}

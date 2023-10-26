@@ -8,27 +8,25 @@ const Worker = () => {
     const workers = useSelector(workersList);
 
     const [toggleWorkers, setToggleWorkers] = useState(false);
-    const [allWorkers, setAllWorkers] = useState([]);
 
-    useEffect(() => {
-        const getWorkers = async () => {
-            const response = await fetch('http://127.0.0.1:8000/api/workers/');
-            const data = await response.json();
-            setAllWorkers(data);
-            dispatch(add(data));
-        };
-        getWorkers();
-    }, []);
+    const getWorkers = async () => {
+        const response = await fetch('http://127.0.0.1:8000/api/workers/');
+        const data = await response.json();
+        dispatch(add(data));
+    };
 
     const toggleWorkersHandler = () => {
         setToggleWorkers(!toggleWorkers);
     };
 
+    useEffect(() => {
+        getWorkers();
+    }, []);
+
     return (
         <div>
             <button onClick={toggleWorkersHandler}>Show workers</button>
             {workers &&
-                toggleWorkers &&
                 workers.map((worker) => (
                     <div key={worker.id}>
                         <h2>
